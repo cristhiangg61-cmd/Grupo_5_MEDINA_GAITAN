@@ -1,24 +1,261 @@
 :root {
-    --color-primario: #1e3c72;
-    --color-secundario: #2a5298;
-    --acento: #ff6b6b;
-    --fuente-principal: 'Roboto', sans-serif;
+  --primary: #2f4b8f;
+  --secondary: #3d5ea8;
+  --accent: #ff5c5c;
+  --bg: #f4f6fb;
+  --text-dark: #1e2a3a;
+  --text-light: #6b7b8d;
+  --white: #ffffff;
 }
 
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-dark);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: var(--primary);
+  color: white;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* ================= HEADER PERFIL ================= */
+
 .header {
-    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 15px;
+  margin: 40px;
 }
 
 .header h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .header p {
-    font-size: 18px;
-    opacity: 0.9;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ================= SECCIONES ================= */
+
+section {
+  margin: 60px 50px;
+}
+
+section h2 {
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: var(--primary);
+}
+
+/* ================= PROYECTOS ================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.project-img {
+  height: 180px;
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: white;
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-info h3 {
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+/* Chips tecnologías */
+.tech {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #eef1f8;
+  font-size: 13px;
+  margin-right: 8px;
+  color: var(--primary);
+}
+
+/* ================= HABILIDADES ================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.skill-card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.skill-card .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.skill-card h3 {
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: var(--text-light);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 60px;
+}
+
+.footer input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+}
+
+.footer button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== FORMULARIO ===== */
+
+#formulario-contacto {
+  max-width: 700px;
+  margin: 30px auto 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.btn-formulario {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #ff5c5c;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-formulario:hover {
+  background: #ff3b3b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
